@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('wallets', function (Blueprint $table) {
             $table->id('wallet_id');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users',  'user_id')->onDelete('cascade');
             $table->decimal('saldo', 15, 2);
             $table->softDeletes();
             $table->timestamps();

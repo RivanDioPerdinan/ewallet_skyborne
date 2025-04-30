@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sky_splits', function (Blueprint $table) {
             $table->id('split_id');
-            $table->foreignId('transaction_id')->constrained('transactions')->onDelete('cascade');
+            $table->foreignId('transaction_id')->constrained('transactions','transaction_id')->onDelete('cascade');
             $table->integer('jumlah_orang');
             $table->decimal('total_tagihan', 15, 2);
             $table->decimal('per_orang', 15, 2);

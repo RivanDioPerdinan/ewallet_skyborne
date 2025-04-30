@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('o_t_p_s', function (Blueprint $table) {
             $table->id('otp_id');
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users', 'user_id')->onDelete('cascade');
             $table->string('kode_otp');
             $table->timestamp('expired_at');
             $table->timestamps();

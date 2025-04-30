@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('virtual__accounts', function (Blueprint $table) {
             $table->id('va_id');
-            $table->foreignId('wallet_id')->constrained('wallets')->onDelete('cascade');
+            $table->foreignId('wallet_id')->constrained('wallets',column: 'wallet_id')->onDelete('cascade');
             $table->string('nomor_va')->unique();
             $table->string('bank');
             $table->timestamps();

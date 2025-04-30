@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('q_r_codes', function (Blueprint $table) {
             $table->id('qr_id');
-            $table->foreignId('wallet_id')->constrained('wallets')->onDelete('cascade');
+            $table->foreignId('wallet_id')->constrained('wallets',column: 'wallet_id')->onDelete('cascade');
             $table->string('kode_qr');
             $table->string('status');
             $table->timestamps();

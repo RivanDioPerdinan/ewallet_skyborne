@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sky_time_capsules', function (Blueprint $table) {
             $table->id('capsule_id');
-            $table->foreignId('wallet_id')->constrained('wallets')->onDelete('cascade');
+            $table->foreignId('wallet_id')->constrained('wallets', 'wallet_id')->onDelete('cascade');
             $table->decimal('jumlah_uang', 15, 2);
             $table->date('buka_tanggal');
             $table->string('status');

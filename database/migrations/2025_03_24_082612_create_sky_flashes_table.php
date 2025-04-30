@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('sky_flashes', function (Blueprint $table) {
             $table->id('flashes_id');
-            $table->foreignId('transaction_id')->constrained('transactions')->onDelete('cascade');
+            $table->foreignId('transaction_id')->constrained('transactions', 'transaction_id')->onDelete('cascade');
             $table->string('metode');
             $table->timestamps();
         });
